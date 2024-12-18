@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hola-mundo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hola-mundo
+  template:
+    metadata:
+      labels:
+        app: hola-mundo
+    spec:
+      containers:
+      - name: hola-mundo
+        image: tuusuario/hola-mundo:v1
+        ports:
+        - containerPort: 80
